@@ -20,7 +20,7 @@ class fofa(object):
     
     def searchResult(self, q):
     
-        regRel = re.compile('(\d{3})</a> <a class=', re.IGNORECASE)
+        regRel = re.compile('(\d{1,5})</a> <a class=', re.IGNORECASE)
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:53.0) Gecko/20100101 Firefox/53.0','Cookie': self.auth}
         self.fofa_param['qbase64'] = base64.b64encode(q)
         total_result = 0
@@ -53,7 +53,7 @@ if __name__ == '__main__':
     
     parser = argparse.ArgumentParser()
     
-    parser.add_argument('-r', '--rule' dest='rule', help='search rule')
+    parser.add_argument('-r', '--rule', dest='rule', help='search rule')
     parser.add_argument('-c', '--cookie', dest='cookie', help='login cookie')    
     
     p = parser.parse_args()
