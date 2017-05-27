@@ -1,0 +1,8 @@
+# file
+*.pyc
+*.txt
+# dir
+__pycache__/
+.vscode/
+build/
+dist/
